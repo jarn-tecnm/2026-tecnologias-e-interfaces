@@ -1,0 +1,417 @@
+:root {
+  font-family:
+    Inter,
+    Segoe UI,
+    Arial,
+    sans-serif;
+  color: #15364c;
+  background: #f3f7fa;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+select {
+  font: inherit;
+}
+button {
+  border: 1px solid #135681;
+  background: #135681;
+  color: white;
+  padding: 11px 18px;
+  border-radius: 9px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover {
+  filter: brightness(0.93);
+}
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+button:focus-visible,
+select:focus-visible {
+  outline: 3px solid #34b5e6;
+  outline-offset: 3px;
+}
+.secundario {
+  background: white;
+  color: #214a65;
+  border-color: #ccdae4;
+}
+.cabecera {
+  background: #102f48;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px max(24px, calc((100vw - 1120px) / 2));
+  gap: 20px;
+}
+.marca {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.emblema {
+  border: 1px solid #598296;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #71d5eb;
+}
+.etiqueta {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0 0 9px;
+  color: #587a8d;
+}
+.cabecera .etiqueta {
+  color: #9bbccc;
+  font-size: 10px;
+}
+h1 {
+  font-size: 23px;
+  margin: 0;
+  font-weight: 650;
+}
+.conexion {
+  font-size: 12px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #234157;
+  padding: 9px 13px;
+  border-radius: 30px;
+}
+.conexion i {
+  width: 7px;
+  height: 7px;
+  background: #f2c778;
+  border-radius: 50%;
+}
+.conexion.vivo i {
+  background: #68dfb3;
+}
+main {
+  max-width: 1120px;
+  margin: auto;
+  padding: 36px 24px;
+}
+.titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+h2 {
+  font-size: 28px;
+  letter-spacing: -0.6px;
+  margin: 0 0 10px;
+}
+.titulo p:not(.etiqueta) {
+  font-size: 14px;
+  color: #6b8292;
+  margin: 0;
+}
+.panel-principal,
+.panel {
+  background: white;
+  border: 1px solid #dde7ed;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px #193d5510;
+  margin-bottom: 24px;
+}
+.panel-principal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+.visual-tanque {
+  background: linear-gradient(140deg, #edf7fc, #e4f1f8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 48px 32px;
+  min-height: 430px;
+}
+.escala {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #69899c;
+}
+.tanque {
+  width: 215px;
+  height: 300px;
+  position: relative;
+  border: 5px solid #9cb9c9;
+  border-top: 10px solid #7b9faf;
+  border-radius: 10px 10px 25px 25px;
+  background: #ffffffa8;
+  overflow: hidden;
+  box-shadow: 10px 13px 0 #3157750b;
+}
+.agua {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(#3db6e8, #1273bf);
+  transition: height 1s ease;
+}
+.agua:before {
+  content: "";
+  height: 9px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #93def5aa;
+  border-radius: 50%;
+}
+.lineas {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to top,
+    transparent 0,
+    transparent calc(25% - 1px),
+    #53778a22 calc(25% - 1px),
+    #53778a22 25%
+  );
+}
+.valor-tanque {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #133952;
+  font-weight: 800;
+  font-size: 29px;
+  text-shadow: 0 1px 3px #fff9;
+}
+.resumen {
+  padding: 36px;
+}
+.numero {
+  font-size: 76px;
+  font-weight: 750;
+  letter-spacing: -4px;
+  line-height: 1.1;
+  margin: 0 0 10px;
+}
+.numero span {
+  font-size: 30px;
+  color: #7290a3;
+  margin-left: 5px;
+  letter-spacing: 0;
+}
+.descripcion {
+  color: #6c8292;
+  font-size: 14px;
+  margin: 0 0 24px;
+}
+dl {
+  font-size: 12px;
+  margin: 0;
+}
+dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e8eef2;
+}
+dt {
+  color: #6b8292;
+}
+dd {
+  margin: 0;
+  text-align: right;
+  font-weight: 600;
+}
+.control {
+  margin-top: 24px;
+}
+.control label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+select {
+  width: 100%;
+  border: 1px solid #cddce5;
+  border-radius: 8px;
+  padding: 10px;
+  background: white;
+  color: #214a65;
+}
+.botones {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+.botones button {
+  flex: 1;
+  font-size: 12px;
+  padding: 10px;
+}
+.nota {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #7a8f9d;
+  margin: 12px 0 0;
+}
+.panel {
+  padding: 24px;
+}
+.titulo-seccion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+h3 {
+  font-size: 16px;
+  margin: 0;
+}
+.titulo-seccion > span {
+  font-size: 11px;
+  color: #7a8f9d;
+}
+.tabla {
+  overflow-x: auto;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+}
+th {
+  color: #6c8494;
+  background: #f5f8fa;
+  font-size: 11px;
+  font-weight: 600;
+}
+th,
+td {
+  padding: 13px 16px;
+  white-space: nowrap;
+  border-bottom: 1px solid #edf2f5;
+}
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+.dato {
+  color: #147cb6;
+  font-weight: 700;
+}
+.orden {
+  background: #edf4f8;
+  color: #456a82;
+  border-radius: 5px;
+  padding: 4px 9px;
+}
+.mensaje {
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+.error {
+  background: #fff0ee;
+  color: #973e35;
+}
+.aviso {
+  background: #e6f6ef;
+  color: #27634a;
+}
+footer {
+  max-width: 1120px;
+  margin: auto;
+  padding: 0 24px 28px;
+  font-size: 11px;
+  color: #7891a1;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+@media (max-width: 700px) {
+  .cabecera {
+    padding: 20px;
+  }
+  .cabecera .etiqueta {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+  h1 {
+    font-size: 18px;
+  }
+  .emblema {
+    display: none;
+  }
+  main {
+    padding: 24px 16px;
+  }
+  .titulo {
+    display: block;
+  }
+  .titulo button {
+    margin-top: 16px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .panel-principal {
+    grid-template-columns: 1fr;
+  }
+  .visual-tanque {
+    min-height: 340px;
+    padding: 30px;
+  }
+  .tanque,
+  .escala {
+    height: 260px;
+  }
+  .resumen {
+    padding: 24px;
+  }
+  .numero {
+    font-size: 64px;
+  }
+  .panel {
+    padding: 18px;
+  }
+  .titulo-seccion {
+    align-items: start;
+    flex-direction: column;
+    gap: 6px;
+  }
+  footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .agua {
+    transition: none;
+  }
+}
